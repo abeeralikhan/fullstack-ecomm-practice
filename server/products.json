@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "categoryId": 0,
+    "title": "Women Sandals Block Heels",
+    "description": "Red color block heel",
+    "price": 3000,
+    "image": "https://cdn.shopify.com/s/files/1/0523/9875/1922/collections/L32997-1_100x_530bf167-97f4-4d34-a27d-a26901b83db9_1200x1200.jpg?v=1618892007"
+  },
+  {
+    "id": 1,
+    "categoryId": 0,
+    "title": "Women Block Heels",
+    "description": "Golden color block heel",
+    "price": 3250,
+    "image": "https://cdn.shopify.com/s/files/1/0582/7303/8492/products/006500175-golden.jpg?v=1677145566"
+  },
+  {
+    "id": 2,
+    "categoryId": 0,
+    "title": "Transparent Block Heel",
+    "description": "Fashionholic shoe brand but having an international presence. Its cost is very low but having high-quality shoes for women and kids",
+    "price": 2500,
+    "image": "https://www.fashionholic.pk/wp-content/uploads/2022/02/4.2.jpg"
+  },
+  {
+    "id": 3,
+    "categoryId": 1,
+    "title": "Faux Leather Bag-pack",
+    "description": "White color faux Leather Bag-pack",
+    "price": 2990,
+    "image": "https://static-01.daraz.pk/p/fc7ef6b0628217859c0f8ca6f569d9be.jpg"
+  },
+  {
+    "id": 4,
+    "categoryId": 1,
+    "title": "Floral Cream Hand Bag",
+    "description": "Floral Cream Shoulder Hand Bag",
+    "price": 4000,
+    "image": "https://cdn.shopify.com/s/files/1/0273/3899/7863/products/1_6589dcc4-9a8c-4a37-9354-4d9499ad90ef_1024x1024.jpg?v=1623304779"
+  }
+]
