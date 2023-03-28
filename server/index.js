@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const fs = require("fs");
 
 const app = express();
@@ -11,14 +12,20 @@ const getData = async (filepath) => {
   return JSON.parse(data);
 };
 
+app.use(
+  cors({
+    origin: "http://127.0.0.1:5173",
+  })
+);
+
 // Get all categories
-app.get("api/categories", async (req, res) => {
+app.get("/api/categories", async (req, res) => {
   const categories = await getData("./categories.json");
   res.json(categories);
 });
 
 // Get all products for that category
-app.get("api/categories/:categoryId", async (req, res) => {
+app.get("/api/categories/:categoryId", async (req, res) => {
   const categoryId = +req.params.categoryId;
   let products = await getData("./products.json");
   products = products.filter((product) => product.categoryId === categoryId);
@@ -28,7 +35,7 @@ app.get("api/categories/:categoryId", async (req, res) => {
 });
 
 // Get a single product
-app.get("api/products/:productId", async (req, res) => {
+app.get("/api/products/:productId", async (req, res) => {
   const productId = +req.params.productId;
   const products = await getData("./products.json");
   const product = products.find((product) => product.id === productId);
