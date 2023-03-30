@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 function HomePage() {
   return (
     <Layout>
+      <h1>Categories</h1>
       <Categories />
     </Layout>
   );
