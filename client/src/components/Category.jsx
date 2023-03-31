@@ -4,7 +4,15 @@ function Category({ category }) {
   return (
     <Link to={`/categories/${category.categoryId}`}>
       <article
-        style={{ display: "flex", marginBottom: "3rem", cursor: "pointer" }}
+        style={{
+          display: "flex",
+
+          cursor: "pointer",
+          alignItems: "center",
+          border: "1px solid #444",
+          borderRadius: "10px",
+          padding: "1rem",
+        }}
       >
         <div>
           <img
@@ -19,7 +27,7 @@ function Category({ category }) {
           />
         </div>
         <div style={{ marginLeft: "2rem" }}>
-          <h2>{category.categoryName}</h2>
+          <h2 style={{ color: "white" }}>{category.categoryName}</h2>
         </div>
       </article>
     </Link>

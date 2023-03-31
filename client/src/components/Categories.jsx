@@ -6,26 +6,42 @@ import Loading from "./Loading";
 function Categories() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   useEffect(() => {
     async function fetchData() {
+      if (error) setError(false);
       setLoading(true);
-      const response = await fetch(`${BASE_URL}/api/categories`);
-      const data = await response.json();
-      setCategories(data);
-      setTimeout(() => setLoading(false), 200);
+      try {
+        const response = await fetch(`${BASE_URL}/api/categories`);
+        const data = await response.json();
+        setCategories(data);
+      } catch (error) {
+        setError(true);
+        console.log(error);
+      }
+      setLoading(false);
     }
     fetchData();
   }, []);
 
   return (
     <>
-      {loading ? (
-        <Loading title="categoires" />
-      ) : (
-        categories.map((category) => (
-          <Category category={category} key={category.id} />
-        ))
+      {error && (
+        <span style={{ color: "red" }}>
+          There was an error fetching the categorires
+        </span>
       )}
+      <section
+        style={{ display: "flex", flexDirection: "column", gap: "3rem" }}
+      >
+        {loading ? (
+          <Loading title="categoires" />
+        ) : (
+          categories.map((category) => (
+            <Category category={category} key={category.id} />
+          ))
+        )}
+      </section>
     </>
   );
 }

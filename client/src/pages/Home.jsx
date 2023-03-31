@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 function HomePage() {
   return (
     <Layout>
-      <h1>Categories</h1>
+      <h1 style={{ marginBottom: "2rem" }}>Categories</h1>
       <Categories />
     </Layout>
   );

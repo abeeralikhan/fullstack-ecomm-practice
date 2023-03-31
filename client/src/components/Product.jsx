@@ -5,7 +5,6 @@ function Product({ product }) {
     <article
       style={{
         display: "flex",
-        marginBottom: "2rem",
         alignItems: "center",
         border: "1px solid #444",
         borderRadius: "10px",
