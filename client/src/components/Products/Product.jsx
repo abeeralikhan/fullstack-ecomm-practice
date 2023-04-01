@@ -1,6 +1,8 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 function Product({ product }) {
+  const { categoryId } = useParams();
   return (
     <article
       style={{
@@ -39,7 +41,9 @@ function Product({ product }) {
           Rs. {product.price}
         </p>
         <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-          <button>VIEW</button>
+          <Link to={`/categories/${categoryId}/product/${product.id}`}>
+            <button>VIEW</button>
+          </Link>
           <button style={{ backgroundColor: "hotpink", color: "white" }}>
             ADD TO CART
           </button>

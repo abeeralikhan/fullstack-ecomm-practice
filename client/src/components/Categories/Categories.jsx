@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../config";
+import { BASE_URL } from "../../config";
 import Category from "./Category";
-import Loading from "./Loading";
+import Loading from "../Loading";
 
 function Categories() {
   const [categories, setCategories] = useState([]);

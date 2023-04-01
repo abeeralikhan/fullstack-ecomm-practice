@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "../config";
 import Layout from "../components/Layout";
-import { useParams } from "react-router-dom";
-import Products from "../components/Products";
+import { useParams, Link } from "react-router-dom";
+import Products from "../components/Products/Products";
 import Loading from "../components/Loading";
+import BackButton from "../components/BackButton";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -32,6 +33,7 @@ function ProductsPage() {
   }, []);
   return (
     <Layout>
+      <BackButton path={`/`} title="CATEGORIES" />
       <h1 style={{ marginBottom: "2rem" }}>Products</h1>
       {error && (
         <span style={{ color: "red" }}>
