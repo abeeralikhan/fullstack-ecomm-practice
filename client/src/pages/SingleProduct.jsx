@@ -4,8 +4,10 @@ import { BASE_URL } from "../config";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import BackButton from "../components/BackButton";
+import useCart from "../hooks/useCart";
 
 function SingleProductPage() {
+  const { addToCart } = useCart();
   const { productId, categoryId } = useParams();
   const [singleProduct, setSingleProduct] = useState({});
   const [loading, setLoading] = useState(false);
@@ -76,7 +78,10 @@ function SingleProductPage() {
                 Rs. {singleProduct.price}
               </p>
               <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-                <button style={{ backgroundColor: "hotpink", color: "white" }}>
+                <button
+                  style={{ backgroundColor: "hotpink", color: "white" }}
+                  onClick={() => addToCart(singleProduct)}
+                >
                   ADD TO CART
                 </button>
               </div>

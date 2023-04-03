@@ -9,14 +9,12 @@ const useCart = () => {
 
     // Does not exist
     if (!product) {
-      console.log("Does not exist");
       newProduct.quantity = 1;
       setCart((prev) => [...prev, newProduct]);
       return;
     }
 
     // Already exist
-    console.log("Does exist");
     setCart((prev) =>
       prev.map((item) => {
         if (item.id !== newProduct.id) return item;

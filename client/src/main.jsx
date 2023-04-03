@@ -5,7 +5,7 @@ import HomePage from "./pages/Home";
 import ProductsPage from "./pages/ProductsPage";
 import SingleProductPage from "./pages/SingleProduct";
 import "./index.css";
-import CartPage from "./pages/Cart";
+import CartPage from "./pages/CartPage";
 import { CartContextProvider } from "./context/cartContext";
 
 const router = createBrowserRouter([
