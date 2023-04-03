@@ -1,8 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import useCart from "../../hooks/useCart";
 
 function Product({ product }) {
   const { categoryId } = useParams();
+  const { addToCart } = useCart();
+
   return (
     <article
       style={{
@@ -44,7 +47,10 @@ function Product({ product }) {
           <Link to={`/categories/${categoryId}/product/${product.id}`}>
             <button>VIEW</button>
           </Link>
-          <button style={{ backgroundColor: "hotpink", color: "white" }}>
+          <button
+            style={{ backgroundColor: "hotpink", color: "white" }}
+            onClick={() => addToCart(product)}
+          >
             ADD TO CART
           </button>
         </div>
