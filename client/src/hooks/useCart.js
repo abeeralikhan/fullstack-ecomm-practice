@@ -23,7 +23,28 @@ const useCart = () => {
     );
   };
 
-  return { cart, addToCart };
+  const removeSingleItem = (productId) => {
+    const updatedCart = [...cart];
+    const product = updatedCart.find((item) => item.id === productId);
+    const itemIdx = updatedCart.findIndex((item) => item.id === productId);
+
+    // When quantity > 1
+    if (product.quantity > 1) {
+      product.quantity = product.quantity - 1;
+      updatedCart[itemIdx] = product;
+      setCart(updatedCart);
+      return;
+    }
+
+    // When quantity === 1
+    removeItem(productId);
+  };
+
+  const removeItem = (productId) => {
+    setCart((prev) => prev.filter((item) => item.id !== productId));
+  };
+
+  return { cart, addToCart, removeSingleItem, removeItem };
 };
 
 export default useCart;

@@ -1,4 +1,7 @@
+import useCart from "../../hooks/useCart";
+
 function CartItem({ item }) {
+  const { addToCart, removeSingleItem, removeItem } = useCart();
   const btnStyles = {
     padding: "2px 8px",
     fontSize: "1.1rem",
@@ -6,7 +9,14 @@ function CartItem({ item }) {
     backgroundColor: "#444",
   };
   return (
-    <article style={{ display: "flex" }}>
+    <article
+      style={{
+        display: "flex",
+        border: "1px solid #444",
+        borderRadius: "10px",
+        padding: "0.7rem",
+      }}
+    >
       <div>
         <img
           src={item.image}
@@ -46,9 +56,13 @@ function CartItem({ item }) {
             >
               Rs. {item.price}
             </span>
-            <button style={btnStyles}>-</button>
+            <button style={btnStyles} onClick={() => removeSingleItem(item.id)}>
+              -
+            </button>
             <span style={{ fontWeight: "600" }}>{item.quantity}</span>
-            <button style={btnStyles}>+</button>
+            <button style={btnStyles} onClick={() => addToCart(item)}>
+              +
+            </button>
           </div>
         </div>
         <div
@@ -56,12 +70,23 @@ function CartItem({ item }) {
             fontSize: "1.3rem",
           }}
         >
-          <span style={{ fontSize: "1.4rem", fontWeight: 600 }}>
+          <span
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 600,
+              color: "lightgreen",
+            }}
+          >
             Rs. {item.price * item.quantity}
           </span>
         </div>
       </div>
-      <button style={{ backgroundColor: "crimson" }}>X</button>
+      <button
+        style={{ backgroundColor: "crimson" }}
+        onClick={() => removeItem(item.id)}
+      >
+        X
+      </button>
     </article>
   );
 }
