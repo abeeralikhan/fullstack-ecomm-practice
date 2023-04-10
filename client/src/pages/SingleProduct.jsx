@@ -44,6 +44,7 @@ function SingleProductPage() {
             style={{
               display: "flex",
               alignItems: "center",
+              color: "white",
             }}
           >
             <div>
@@ -76,6 +77,15 @@ function SingleProductPage() {
                 }}
               >
                 Rs. {singleProduct.price}
+                <i
+                  className="fas fa-heart"
+                  style={{
+                    cursor: "pointer",
+                    marginLeft: "2rem",
+                    fontSize: "20px",
+                    color: "white",
+                  }}
+                ></i>
               </p>
               <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
                 <button

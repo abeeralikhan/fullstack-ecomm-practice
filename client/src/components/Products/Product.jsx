@@ -14,6 +14,7 @@ function Product({ product }) {
         border: "1px solid #444",
         borderRadius: "10px",
         padding: "1rem",
+        color: "white",
       }}
     >
       <div>
@@ -42,6 +43,15 @@ function Product({ product }) {
           }}
         >
           Rs. {product.price}
+          <i
+            className="fas fa-heart"
+            style={{
+              cursor: "pointer",
+              marginLeft: "2rem",
+              fontSize: "20px",
+              color: "white",
+            }}
+          ></i>
         </p>
         <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
           <Link to={`/categories/${categoryId}/product/${product.id}`}>

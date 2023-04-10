@@ -23,11 +23,13 @@ const Navbar = () => {
   const styles = {
     borderBottom: "1px solid gray",
     marginBottom: "50px",
+    color: "white",
   };
   return (
     <div style={styles}>
       <Link to="/">Ecommerce App</Link> - Home | About | Contact Us -{" "}
-      <Link to="/cart">Cart ({quantity})</Link>
+      <Link to="/cart">Cart ({quantity})</Link> |
+      <Link to="/Likes"> Favourites({quantity})</Link>
     </div>
   );
 };
