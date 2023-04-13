@@ -29,11 +29,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <CartContextProvider>
-      <ProductContextProvider>
-        <RouterProvider router={router} />
-      </ProductContextProvider>
-    </CartContextProvider>
-  </React.StrictMode>
+  <CartContextProvider>
+    <ProductContextProvider>
+      <RouterProvider router={router} />
+    </ProductContextProvider>
+  </CartContextProvider>
 );

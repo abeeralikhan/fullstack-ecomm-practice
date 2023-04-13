@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 function HomePage() {
   return (
     <Layout>
-      <Counter />
+      {/* <Counter /> */}
       <h1 style={{ marginBottom: "2rem", color: "white" }}>Categories</h1>
       <Categories />
     </Layout>

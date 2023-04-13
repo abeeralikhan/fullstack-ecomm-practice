@@ -3,9 +3,13 @@ import Products from "../components/Products/Products";
 import Loading from "../components/Loading";
 import BackButton from "../components/BackButton";
 import useProduct from "../hooks/useProduct";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { BASE_URL } from "../config";
 
 function ProductsPage() {
-  const [products, loading, error] = useProduct();
+  const { products, loading, error } = useProduct();
+  console.log("Products Page", products);
 
   return (
     <Layout>

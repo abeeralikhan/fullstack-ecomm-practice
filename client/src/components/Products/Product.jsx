@@ -1,10 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import useCart from "../../hooks/useCart";
+import useProduct from "../../hooks/useProduct";
 
 function Product({ product }) {
   const { categoryId } = useParams();
   const { addToCart } = useCart();
+  const { addToFavorite } = useProduct();
+  console.log("Single Product");
 
   return (
     <article
@@ -49,8 +52,9 @@ function Product({ product }) {
               cursor: "pointer",
               marginLeft: "2rem",
               fontSize: "20px",
-              color: "white",
+              color: product.isFavourite ? "red" : "white",
             }}
+            onClick={() => addToFavorite(product.id)}
           ></i>
         </p>
         <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>

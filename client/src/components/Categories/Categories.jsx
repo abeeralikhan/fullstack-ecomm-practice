@@ -19,7 +19,7 @@ function Categories() {
           <Loading title="categoires" />
         ) : (
           categories.map((category) => (
-            <Category category={category} key={category.id} />
+            <Category category={category} key={category.categoryId} />
           ))
         )}
       </section>
