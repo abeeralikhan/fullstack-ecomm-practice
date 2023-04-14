@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd server && npm run server",
+    "client": "cd client && npm run client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abeeralikhan/fullstack-ecomm-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abeeralikhan/fullstack-ecomm-practice/issues"
+  },
+  "homepage": "https://github.com/abeeralikhan/fullstack-ecomm-practice#readme",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
